@@ -13,11 +13,15 @@ public class Person {
         this.age = age;
     }
 
-    public void move(String fullName) {
-        System.out.println(fullName + " идёт");
+    public String getFullName() {
+        return fullName;
     }
 
-    public void talk(String fullName) {
-        System.out.println(fullName + " говорит");
+    public void move() {
+        System.out.println(getFullName() + " идёт");
+    }
+
+    public void talk() {
+        System.out.println(getFullName() + " говорит");
     }
 }

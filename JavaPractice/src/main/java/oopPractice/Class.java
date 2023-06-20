@@ -1,2 +1,4 @@
-package oopPractice;public class Class {
+package oopPractice;
+
+public class Class {
 }

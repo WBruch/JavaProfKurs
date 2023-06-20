@@ -1,2 +1,8 @@
-package oopPractice;public class OopExample {
+package oopPractice;
+
+public class OopExample {
+
+    public static void main(String[] args) {
+
+    }
 }

@@ -6,7 +6,7 @@ public class PersonMain {
         Person mike = new Person();
         Person johnny = new Person("Jonathan",35);
 
-        johnny.move(johnny.fullName);
-        johnny.talk(johnny.fullName);
+        johnny.move();
+        johnny.talk();
     }
 }
