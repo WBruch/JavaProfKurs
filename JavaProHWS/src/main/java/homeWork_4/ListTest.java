@@ -23,14 +23,14 @@ public class ListTest {
     public static void main(String[] args) {
 
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i <= 100_000_000; i++) {
+        for (int i = 1; i <= 300_000_000; i++) {
             list.add(i);
         }
 
         Long t1 = System.currentTimeMillis();
         int temp = 0;
-        for(Integer current : list) {
-           temp = current;
+        for (Integer current : list) {
+            temp = current;
         }
         Long t2 = System.currentTimeMillis();
         System.out.println("for each loop time = " + (t2 - t1) + " milliseconds");
@@ -63,7 +63,7 @@ public class ListTest {
 
         long t9 = System.currentTimeMillis();
         Iterator<Integer> iterator = list.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             temp = iterator.next();
         }
         long t10 = System.currentTimeMillis();
@@ -72,12 +72,17 @@ public class ListTest {
 
         long t11 = System.currentTimeMillis();
         ListIterator<Integer> listIterator1 = list.listIterator();
-        while (listIterator1.hasNext()){
+        while (listIterator1.hasNext()) {
             temp = listIterator1.next();
         }
         long t12 = System.currentTimeMillis();
         System.out.println("ListIterator temp = " + (t12 - t11) + " milliseconds");
 
-
+        /**
+         * for_each , iterator и listIterator у меня показывает одинаковое время, причём оно больше чем при использовании обычного цикла
+         * Я думал результат должен был быть обратным
+         * измерение проводил со следующими значениями 10_000_000, 100_000_000 и 300_000_000, но результат не менялся, цикл for оказывался быстрее
+         * причём обратный перебор оказался наиболее быстрым
+         */
     }
 }
