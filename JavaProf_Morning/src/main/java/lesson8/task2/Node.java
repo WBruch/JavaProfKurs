@@ -4,6 +4,7 @@ public class Node {
 
     private String value;
     private Node next;
+    private Node previous;
 
     public Node(String value) {
         this.value = value;
@@ -28,5 +29,9 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public Node getPrevious() {
+        return previous;
     }
 }

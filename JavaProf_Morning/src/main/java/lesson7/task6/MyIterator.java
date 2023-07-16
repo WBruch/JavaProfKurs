@@ -2,30 +2,56 @@ package lesson7.task6;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Итератор, который возвращает чётные числа из переданной коллекции
  */
 public class MyIterator implements Iterator<Integer> {
 
+    private Iterator<Integer> iterator;
+    private Integer next;
 
     public MyIterator(List<Integer> list) {
-
+        iterator = list.iterator();
+        moveToNext();
     }
 
     /**
-     * Метод должен вернуть true, если в переданной коллекции ещё есть чётные числа
+     * Метод должен вернуть true, если в переданой коллекции ксть ещё чётные чисда
      */
     @Override
     public boolean hasNext() {
-        return false;
+        return next != null;
     }
 
     /**
-     * Вернуть следующее чётное число
+     * Вернёт следующее чётное число
      */
     @Override
     public Integer next() {
-        return null;
+        Integer current = next;
+
+        while (hasNext()) {
+
+            moveToNext();
+            break;
+        }
+        return current;
     }
+
+    private void moveToNext() {
+
+        while (iterator.hasNext()) {
+
+            Integer current = iterator.next();
+            if (current % 2 == 0) {
+                next = current;
+                return;
+            }
+        }
+        next = null;
+    }
+
+
 }
