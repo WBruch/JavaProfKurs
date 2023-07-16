@@ -1,6 +1,5 @@
 package lesson8.task2;
 
-import java.util.Iterator;
 import java.util.ListIterator;
 
 public class MyIterator implements ListIterator<String> {
@@ -25,16 +24,23 @@ public class MyIterator implements ListIterator<String> {
 
     @Override
     public boolean hasPrevious() {
-        return false;
+        return current != null;
     }
 
     @Override
     public String previous() {
-        return null;
+        String value = current.getValue();
+        current = current.getPrevious();
+        return value;
     }
 
     @Override
     public int nextIndex() {
+        while (current != null) {
+            int index = 0;
+            current = current.getNext();
+           return index++;
+        }
         return 0;
     }
 

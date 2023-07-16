@@ -1,8 +1,8 @@
 package lesson8.task2;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -25,11 +25,16 @@ public class Main {
         System.out.println(list);
 
         List<String> strings = new ArrayList<>();
-        Iterator<String> iter = strings.iterator();
+        ListIterator<String> iter = strings.listIterator();
 
         System.out.println("Цикл for-each");
         for (String current : list) {
             System.out.println(current);
         }
+
+
+
+
+
     }
 }
